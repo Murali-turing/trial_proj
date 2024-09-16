@@ -1,0 +1,3 @@
+[submodule "harness/subj"]
+	path = harness/subj
+	url = git@github.com:turing-genai-hw/tur_subj_llm

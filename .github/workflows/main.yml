@@ -1,0 +1,17 @@
+on: 
+  [pull_request, workflow_dispatch]
+
+jobs:
+  harness:
+    uses: turing-genai-hw/tur_actions/.github/workflows/harness_eval.yml@main
+    secrets:
+      OPENAI_USER_KEY: ${{ secrets.OPENAI_USER_KEY }}
+      READ_ONLY_DEPLOY_KEY: ${{ secrets.READ_ONLY_DEPLOY_KEY }}
+      READ_ONLY_DEPLOY_HARNESS: ${{ secrets.READ_ONLY_DEPLOY_HARNESS }}
+
+  subjective:
+    uses: turing-genai-hw/tur_actions/.github/workflows/harness_subj.yml@main
+    secrets:
+      OPENAI_USER_KEY: ${{ secrets.OPENAI_USER_KEY }}
+      READ_ONLY_DEPLOY_KEY: ${{ secrets.READ_ONLY_DEPLOY_KEY }}
+      READ_ONLY_DEPLOY_HARNESS: ${{ secrets.READ_ONLY_DEPLOY_HARNESS }}
